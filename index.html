@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#edf4fb" />
+    <title>Data Atlas | Energy visualisations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="page-header">
+        <a class="brand" href="#overview" aria-label="Data Atlas overview">
+          <span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>data atlas</span>
+        </a>
+        <div class="header-note"><span class="status-dot"></span>ENERGY DATA / VISUALISATION</div>
+      </header>
+
+      <section class="intro" id="overview">
+        <div class="eyebrow">DATA OVERVIEW <span>/</span> ENERGY</div>
+        <h1>Energy, mapped<span>.</span></h1>
+        <p>Electricity prices and television energy use, seen from four angles.</p>
+      </section>
+
+      <section class="chart-grid" aria-label="Energy data charts">
+        <article class="chart-panel">
+          <header class="panel-header">
+            <div><span class="chart-index">01</span><h2>Screen size vs. energy use</h2></div>
+            <span class="chart-type">SCATTER</span>
+          </header>
+          <div class="chart-area">
+            <canvas id="scatter-chart" role="img" aria-label="Scatter plot of television screen size and annual energy consumption"></canvas>
+            <p class="chart-state" aria-live="polite">Loading television data...</p>
+          </div>
+          <footer class="panel-footer"><span>SCREEN SIZE · INCHES</span><span>data/Ex5_TV_energy.csv</span></footer>
+        </article>
+
+        <article class="chart-panel">
+          <header class="panel-header">
+            <div><span class="chart-index cyan">02</span><h2>Australian spot prices</h2></div>
+            <span class="chart-type">LINE</span>
+          </header>
+          <div class="chart-area">
+            <canvas id="line-chart" role="img" aria-label="Line chart of annual Australian regional electricity spot prices"></canvas>
+            <p class="chart-state" aria-live="polite">Loading price history...</p>
+          </div>
+          <footer class="panel-footer"><span>ANNUAL PRICE · $/MWH</span><span>data/Ex5_ARE_Spot_Prices.csv</span></footer>
+        </article>
+
+        <article class="chart-panel">
+          <header class="panel-header">
+            <div><span class="chart-index indigo">03</span><h2>55-inch TV energy use</h2></div>
+            <span class="chart-type">BAR</span>
+          </header>
+          <div class="chart-area">
+            <canvas id="bar-chart" role="img" aria-label="Bar chart comparing mean energy use by screen technology for 55-inch televisions"></canvas>
+            <p class="chart-state" aria-live="polite">Loading 55-inch TV data...</p>
+          </div>
+          <footer class="panel-footer"><span>MEAN · KWH/YEAR</span><span>data/Ex5_TV_energy_55inchtv_byScreenType.csv</span></footer>
+        </article>
+
+        <article class="chart-panel">
+          <header class="panel-header">
+            <div><span class="chart-index sky">04</span><h2>Energy by screen technology</h2></div>
+            <span class="chart-type">PIE</span>
+          </header>
+          <div class="chart-area">
+            <canvas id="pie-chart" role="img" aria-label="Pie chart showing screen technology shares of mean annual energy use"></canvas>
+            <p class="chart-state" aria-live="polite">Loading screen technology data...</p>
+          </div>
+          <footer class="panel-footer"><span>ALL SIZES · MEAN KWH/YEAR</span><span>data/Ex5_TV_energy_Allsizes_byScreenType.csv</span></footer>
+        </article>
+      </section>
+
+      <footer class="page-footer"><span>DATA ATLAS</span><span>CHARTS RESIZE WITH YOUR WINDOW</span></footer>
+    </main>
+  </body>
+</html>
